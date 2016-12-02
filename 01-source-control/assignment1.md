@@ -5,3 +5,4 @@
 4. Push your changes to back to your GitHub repo.
 5. ???
 6. Profit.
+7. Repeat until done profiting.
