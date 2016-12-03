@@ -1,20 +1,65 @@
 <html>
 <head>
   <script type="text/javascript">
-          function execute() {
-             // Add triangle exercise code here
+    function execute() {
+      // Add triangle exercise code here
+      var loops = 0;
+      var triangle = "";
+      while(loops < 7)
+      {
+          triangle += "#"
+          console.log(triangle)
+          loops++
+      }
+      // end triangle code
 
-             // end triangle code
-             
-             // start fizzbuzz code
-
-             // end fizzbuzz code
-
-             // start chessboard code
-
-             // end chessboard code
+      // start fizzbuzz code
+      var count = 1;
+      while (count <= 100)
+      {
+          if ((count % 3 == 0) && (count % 5 == 0))
+          {
+              console.log("FizzBuzz");
           }
-    </script>
+          else if (count % 3 == 0)
+          {
+              console.log("Fizz");
+          }
+          else if (count % 5 == 0)
+          {
+              console.log("Buzz");
+          }
+          else
+          {
+              console.log(count);
+          }
+          count++
+      }
+      // end fizzbuzz code
+
+      // start chessboard code
+      var size = 8;
+      var len =  1;
+      var wid =  1;
+      var txt = "";
+      while (len <= size)
+      {
+          txt = "";
+          while (wid <= size)
+          {
+              if (!(len % 2)) {wid++}
+              if (wid % 2)    {txt += " "}
+              if (!(wid % 2)) {txt += "#"}
+              if (!(len % 2)) {wid--}
+              wid++
+          }
+          console.log(txt);
+          len++;
+          wid = 1;
+      }
+      // end chessboard code
+    }
+  </script>
 </head>
 <body>
   <input type="button" onclick="execute()" value="Execute Code" />
