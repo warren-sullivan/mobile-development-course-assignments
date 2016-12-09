@@ -1,9 +1,22 @@
-function range(start, end) {
-    // your code here
+function range(start, end, inc){
+    if (!inc) { inc = 1; }
+    if (start > end && inc > 0) { return [-1]; }
+    if (start < end && inc < 0) { return [-1]; }
+
+    var array = [];
+    while (start <= end){
+        array.push(start);
+        start += inc;
+    }
+    return array;
 }
 
-function sum(array) {
-    // your sum function here
+function sum(array){
+    var num = 0;
+    while (array.length > 0){
+        num += array.pop();
+    }
+    return num;
 }
 
 
@@ -22,11 +35,11 @@ function testRangeFunction() {
     console.log(resultString);
 }
 
-// test the range function
+// test the sum function
 function testSumFunction() {
     var resultString = "testSumFunction:";
 
-    if (sum(range(1,10) === 55))
+    if (sum(range(1,10)) === 55)
         resultString += "pass";
     else
         resultString += "fail";
