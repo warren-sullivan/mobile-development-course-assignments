@@ -6,6 +6,13 @@
     td, th { border: 1px solid black; padding: 3px 8px; }
     th     { text-align: left; }
   </style>
+  <h3> Savings Rate Calculator </h3>
+  <p> Starting amount: <input type="text" id="amount" /> </p>
+  <p> Rate of return (percent): <input type="text" id="return" /> </p>
+  <p> Years: <input type="text" id="years" /> </p>
+  <input type="button" value="Calculate" onclick="calculate()" />
+  <input type="button" value="Reset" onclick="reset()" />
+  <p id="results_table"></p>
   <script type="text/javascript" src="main.js" ></script>
 </head>
 <body>
