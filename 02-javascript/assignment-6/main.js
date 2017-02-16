@@ -11,8 +11,8 @@ this.Count = function(data){
       name = 'countries';
     el.innerHTML = data + ' ' + name ;
   }else{
-    el.innerHTML = 'No ' + name;}
-};
+    el.innerHTML = 'No ' + name;
+}};
 
 this.FetchAll = function(){
   var data = '';
