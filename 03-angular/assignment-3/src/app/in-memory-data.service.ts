@@ -1,0 +1,13 @@
+import { InMemoryDbService } from 'angular-in-memory-web-api';
+
+export class InMemoryDataService implements InMemoryDbService {
+  createDb() {
+    let assignments = [
+    { "id": 1, "assignment": "Quiz", "scored": 16, "possible": 20,  "percent": 0.8, "grade": "B" },
+    { "id": 2, "assignment": "Quiz", "scored": 18, "possible": 20,  "percent": 0.9, "grade": "A" },
+    { "id": 3, "assignment": "Quiz", "scored": 17, "possible": 20,  "percent": 0.8, "grade": "B" },
+    { "id": 4, "assignment": "Test", "scored": 88, "possible": 100,  "percent": 0.88, "grade": "B" }
+    ];
+    return {assignments};
+  }
+}

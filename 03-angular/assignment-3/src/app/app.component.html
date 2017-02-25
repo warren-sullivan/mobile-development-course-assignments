@@ -1,0 +1,61 @@
+<style>
+  /* Defines a cleaner look for tables */
+  table  { border-collapse: collapse; }
+  td, th { border: 1px solid black; padding: 3px 8px; }
+  th     { text-align: left; }
+  td.no-border { border: 0px }
+</style>
+
+<p><b>Student: </b>Bob Smith</p>
+<p><b>Email: </b>bobsmith@gmail.com</p>
+
+<p><b>Performance</b></p>
+<table>
+  <tr>
+    <th>Points</th>
+    <th>Points Possible</th>
+    <th>Percent</th>
+    <th>Grade</th>
+  </tr>
+  <tr>
+    <td>{{TotalScoredPoints}}</td>
+    <td>{{TotalPointsPossible}}</td>
+    <td>{{TotalPercentGrade | percent}}</td>
+    <td>{{Grade}}</td>
+  </tr>
+</table>
+
+<hr />
+<p><b>Add Assignment</b></p>
+<p>
+  Assingment Name: 
+  <input type="text" [(ngModel)]="AssignmentName" />
+</p>
+<p>
+  Scored Points: 
+  <input type="number" [(ngModel)]="ScoredPoints" />
+</p>
+<p>
+  Points Possible: 
+  <input type="number" [(ngModel)]="PointsPossible" />
+</p>
+<button (click)="addAssignment()">Add Assignment</button>
+
+<p><b>Assignments</b></p>
+<table>
+  <tr>
+    <th>Assignment Name</th>
+    <th>Points Scored</th>
+    <th>Points Possible</th>
+    <th>Percent</th>
+    <th>Grade</th>
+  </tr>
+  <tr *ngFor="let assignment of getAssignments()">
+    <td>{{ assignment.assignment}}</td>
+    <td>{{ assignment.scored }}</td>
+    <td>{{ assignment.possible }}</td>
+    <td>{{ assignment.percent | percent }}</td>
+    <td>{{ assignment.grade }}</td>
+    <td class= 'no-border'><button (click)='deleteAssignment(assignment)'>x</button></td>
+  </tr>
+</table>
