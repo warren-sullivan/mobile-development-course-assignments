@@ -27,6 +27,7 @@ export class AppComponent {
 
   constructor(private http: Http) {
     this.AssignmentList = [];
+    this.getAssignmentService();
     this.calcSums();
   }
 
@@ -56,16 +57,14 @@ export class AppComponent {
   }
 
   addAssignment():void {
-    let newAssignment: assignment;
-    newAssignment = {
-      id: 100,
+    let newAssignment: assignment = {
       assignment: this.AssignmentName,
       scored: this.ScoredPoints,
       possible: this.PointsPossible,
       percent: this.ScoredPoints / this.PointsPossible,
       grade: this.calcGrade(this.ScoredPoints / this.PointsPossible,),
     }
-    
+
     this.addAssignmentService(newAssignment);
     this.getAssignmentService();
     this.calcSums();
@@ -100,7 +99,6 @@ export class AppComponent {
 }
 
 interface assignment {
-  id: number;
   assignment: string;
   scored: number;
   possible: number;

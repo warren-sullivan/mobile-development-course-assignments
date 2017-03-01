@@ -18,6 +18,7 @@ var AppComponent = (function () {
         this.headers = new http_1.Headers({ "Content-Type": "application/json" });
         this.options = new http_1.RequestOptions({ headers: this.headers });
         this.AssignmentList = [];
+        this.getAssignmentService();
         this.calcSums();
     }
     AppComponent.prototype.calcSums = function () {
@@ -42,9 +43,7 @@ var AppComponent = (function () {
         return this.http.get(this.Url).toPromise().then(function (val) { return _this.AssignmentList = val.json(); }).catch(this.handleError);
     };
     AppComponent.prototype.addAssignment = function () {
-        var newAssignment;
-        newAssignment = {
-            id: 100,
+        var newAssignment = {
             assignment: this.AssignmentName,
             scored: this.ScoredPoints,
             possible: this.PointsPossible,
